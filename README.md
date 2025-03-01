@@ -1,2 +1,2 @@
-![](/assets/amazon_logo.png)
+![](/assets/logo.png)
 # Amazon Sales Analysis
