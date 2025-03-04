@@ -1,2 +1,2 @@
-![](assets/adidas-logo.png)
+![](assets/adidas_logo.png)
 # Adidas United States Sales Analysis
