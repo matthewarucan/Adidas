@@ -1,2 +1,2 @@
-![](assets/logo.png)
-# Amazon Sales Analysis
+![](assets/adidas_logo.png)
+# Adidas United States Sales Analysis
