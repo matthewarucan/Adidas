@@ -10,3 +10,13 @@ The primary objective is to analyze the sales performance of Adidas products by 
 ### 1.2: The Business Task
 From my perspective, the rise and convenience of online shopping have become a significant trend among consumers. In this analysis, I will explore whether it would be beneficial for Adidas to close some physical stores and focus more on online sales. The main reason for this investigation is that e-commerce can significantly reduce operational costs. The key question is whether the available data supports the idea that increasing online sales would be a more profitable strategy for Adidas.
 
+### 1.3: Key Stakeholders
+- ** Executive Management: CEO, CFO, and Chief Digital Officer (CDO)
+- ** Finance Department: CFO and Financial Analysts
+- ** E-Commerce and Digital Transformation: Chief Digital Officer (CDO) and E-Commerce Managers
+- ** Sales and Retail Operations: Head of Retail Operations and Sales Managers
+- ** Marketing Department: Chief Marketing Officer (CMO) and Digital Marketing Teams
+- ** Supply Chain and Logistics: Chief Supply Chain Officer (CSCO) and Logistics Managers
+
+### 1.4: Guiding Questions
+
