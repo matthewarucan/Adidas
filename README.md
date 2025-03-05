@@ -8,7 +8,7 @@ The goal of the Ask phase is to clearly define the business problem and transfor
 The primary objective is to analyze the sales performance of Adidas products by examining factors such as sales trends, product popularity, regional performance, and profitability. This analysis aims to provide actionable insights that will help in optimizing product strategy, enhancing regional sales, improving marketing campaigns, boosting profitability, and supporting strategic decisions.
 
 ### 1.2: The Business Task
-From my perspective, the rise and convenience of online shopping have become a significant trend among consumers. In this analysis, I will explore whether it would be beneficial for Adidas to close some physical stores and focus more on online sales. The main reason for this investigation is that e-commerce can significantly reduce operational costs. The key question is whether the available data supports the idea that increasing online sales would be a more profitable strategy for Adidas.
+From my perspective, the rise and convenience of online shopping have become significant trends among consumers. In this analysis, I will explore profitability and performance optimization for Adidas. My focus is on understanding what drives profit across different dimensions, such as sales channels, time periods, and geographic regions. Through this analysis, I aim to gain insights into whether increasing Adidas's e-commerce presence would be beneficial or if the current sales strategies are well-positioned for success.
 
 ### 1.3: Key Stakeholders
 - **Executive Management**: CEO, CFO, and Chief Digital Officer (CDO)
@@ -19,13 +19,6 @@ From my perspective, the rise and convenience of online shopping have become a s
 - **Supply Chain and Logistics**: Chief Supply Chain Officer (CSCO) and Logistics Managers
 
 ### 1.4: Guiding Questions
-- What are the top-performing regions, states, and cities in terms of sales revenue?
-- How do sales trends vary by season or quarter?
-- Which sales methods drive the most sales and profit?
-
-
-- Which product categories perform better online compared to in-store?
-- How does the profit margin of online sales compare to that of physical stores?
-- Are there specific stores that consistently underperform in terms of profit margins?
-- How does the average order value differ between online and physical store customers?
-- Which regions show a higher demand for online shopping compared to in-store purchases?
+- What sales methods (e.g., online vs. in-store) are most effective for different products?
+- How do sales trends fluctuate over time (monthly, quarterly, yearly)?
+- Which regions or states have the highest sales revenue and profit margins?
