@@ -19,4 +19,4 @@ From my perspective, the rise and convenience of online shopping have become a s
 - **Supply Chain and Logistics**: Chief Supply Chain Officer (CSCO) and Logistics Managers
 
 ### 1.4: Guiding Questions
-
+- What are the top-performing regions, states, and cities in terms of sales revenue?
