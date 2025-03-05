@@ -2,11 +2,9 @@
 # Adidas United States Sales Analysis
 
 # 1: ASK
-
 The goal of the Ask phase is to clearly define the business problem and transform it into actionable questions. This process includes understanding stakeholder objectives, identifying success criteria, and specifying key deliverables, all while considering constraints like time, resources, and data availability.
 
 ### 1.1: Define the Business Objective
-
 The primary objective is to analyze the sales performance of Adidas products by examining factors such as sales trends, product popularity, regional performance, and profitability. This analysis aims to provide actionable insights that will help in optimizing product strategy, enhancing regional sales, improving marketing campaigns, boosting profitability, and supporting strategic decisions.
 
 ### 1.2: The Business Task
