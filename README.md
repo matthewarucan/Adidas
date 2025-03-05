@@ -20,3 +20,12 @@ From my perspective, the rise and convenience of online shopping have become a s
 
 ### 1.4: Guiding Questions
 - What are the top-performing regions, states, and cities in terms of sales revenue?
+- How do sales trends vary by season or quarter?
+- Which sales methods drive the most sales and profit?
+
+
+- Which product categories perform better online compared to in-store?
+- How does the profit margin of online sales compare to that of physical stores?
+- Are there specific stores that consistently underperform in terms of profit margins?
+- How does the average order value differ between online and physical store customers?
+- Which regions show a higher demand for online shopping compared to in-store purchases?
