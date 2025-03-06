@@ -22,3 +22,17 @@ From my perspective, the rise and convenience of online shopping have become sig
 - What sales methods (e.g., online vs. in-store) are most effective for different products?
 - How do sales trends fluctuate over time (monthly, quarterly, yearly)?
 - Which regions or states have the highest sales revenue and profit margins?
+
+# 2: PREPARE
+In the Prepare phase, we examine the data to assess its structure, credibility, and relevance for answering the business questions. This includes addressing potential limitations, verifying the data's integrity, and ensuring compliance with ethical and legal standards.
+
+### 2.1: Data Source
+**Primary Dataset**
+- **Name**: Adidas Sales in United States
+- **Source**: Kaggle (CC0: Public Domain)
+- **Description**: This Adidas sales dataset is a collection of data that includes information on the sales of Adidas products. This type of dataset may include details such as the number of units sold, the total sales revenue, the location of the sales, the type of product sold, and any other relevant information.
+
+### 2.2: Downloading The Data
+In this case study, Python Pandas will be the main tool for data analysis. The CSV files that will be used in this case study include:
+- `Adidas US Sales Datasets`
+
