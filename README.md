@@ -45,3 +45,7 @@ I will use ROCCC to assess whether this data has issues with bias or credibility
 - **Current**: 
 - **Cited**: 
 
+# 3: PROCESS
+In the process phase, we ensure our data is clean by correcting or removing inaccurate, corrupted, improperly formatted, duplicate, or incomplete entries within the dataset.
+
+### 3.1: Reviewing Our Data in Python
