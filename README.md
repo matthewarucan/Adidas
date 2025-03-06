@@ -36,3 +36,12 @@ In the Prepare phase, we examine the data to assess its structure, credibility, 
 In this case study, Python Pandas will be the main tool for data analysis. The CSV files that will be used in this case study include:
 - `Adidas US Sales Datasets`
 
+### 2.3: Data Credibility and ROCCC Assessment
+I will use ROCCC to assess whether this data has issues with bias or credibility.
+
+- **Reliable**: 
+- **Original**: 
+- **Comprehensive**: 
+- **Current**: 
+- **Cited**: 
+
