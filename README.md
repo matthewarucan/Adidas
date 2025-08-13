@@ -1,3 +1,3 @@
 ![](assets/adidas_logo.png)
-# Adidas United States Sales Analysis (In Progress)
+# Retail Price Elasticity & Profit Optimization for Adidas Sales Channels
 
