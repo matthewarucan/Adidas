@@ -94,7 +94,6 @@ Add helper columns to enable time-based analysis.
     ```excel
     ="Q" & ROUNDUP(MONTH(C2)/3,0)
     ```
-
 ---
 
 
