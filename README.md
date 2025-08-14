@@ -87,13 +87,13 @@ Add helper columns to enable time-based analysis.
    =YEAR(C2)
    ```
 2. Month (3-letter label):
-```excel
-=TEXT(C2,"MMM")
-```
+  ```excel
+  =TEXT(C2,"MMM")
+  ```
 3. Quarter:
-```excel
-="Q" & ROUNDUP(MONTH(C2)/3,0)
-```
+  ```excel
+  ="Q" & ROUNDUP(MONTH(C2)/3,0)
+  ```
 ---
 
 
