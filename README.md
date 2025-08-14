@@ -84,3 +84,19 @@ Steps:
    Use formula:
    ```excel
    =A2 & " - " & D2 & " - " & E2 & " - " & F2
+
+   3.3 Add Date Fields
+
+Insert a Year column:
+
+=YEAR(C2)
+
+
+Insert a Month column:
+
+=TEXT(C2,"MMM")
+
+
+Insert a Quarter column:
+
+="Q" & ROUNDUP(MONTH(C2)/3,0)
