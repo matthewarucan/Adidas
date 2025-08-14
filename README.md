@@ -1,7 +1,5 @@
 ![](assets/adidas_logo.png)
-# Retail Price Elasticity & Profit Optimization for Adidas Sales Channels
-
-# Retail Channel Power Shift — Excel-Only Business Analyst Project
+# Retail Channel Power Shift
 
 ## Step 1 — Understand & Define the Business Problem
 
