@@ -50,12 +50,12 @@ If one of these channels reduces shelf space, changes contract terms, or stops s
 ---
 
 ### 2.2 Workflow Plan
-| Phase | Task | Tool/Method |
-|-------|------|-------------|
-| Setup | Import data, clean headers, create `Channel` column | Excel formulas |
-| Analysis | Create Pivot Table for revenue share & cumulative % | Excel PivotTables |
-| Scenario | Build Revenue-at-Risk calculator | Excel formulas & Data Validation |
-| Summary | Build dashboard & recommendations | Excel charts + summary sheet |
+| Phase   | Task                                          | Tool/Method                |
+|---------|-----------------------------------------------|----------------------------|
+| Setup   | Import data, clean headers, create `Channel`  | Excel formulas              |
+| Analysis| Create Pivot Table for revenue share & cumulative % | Excel PivotTables      |
+| Scenario| Build Revenue-at-Risk calculator              | Excel formulas & Data Validation |
+| Summary | Build dashboard & recommendations             | Excel charts + summary sheet |
 
 ---
 
@@ -63,7 +63,7 @@ If one of these channels reduces shelf space, changes contract terms, or stops s
 
 ### 3.1 Load & Inspect
 1. Open `Adidas US Sales Datasets.xlsx`.
-2. Remove any empty rows at top or bottom.
+2. Remove any empty rows at the top or bottom.
 3. Check column headers — they should include:
    - `Retailer`, `Retailer ID`, `Invoice Date`, `Region`, `State`, `City`, `Product`, `Price per Unit`, `Units Sold`, `Total Sales`, `Operating Profit`, `Operating Margin`, `Sales Method`.
 
@@ -84,19 +84,3 @@ Steps:
    Use formula:
    ```excel
    =A2 & " - " & D2 & " - " & E2 & " - " & F2
-
-   3.3 Add Date Fields
-
-Insert a Year column:
-
-=YEAR(C2)
-
-
-Insert a Month column:
-
-=TEXT(C2,"MMM")
-
-
-Insert a Quarter column:
-
-="Q" & ROUNDUP(MONTH(C2)/3,0)
