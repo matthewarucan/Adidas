@@ -78,7 +78,7 @@ Steps:
    ```excel
    =A2 & " - " & D2 & " - " & E2 & " - " & F2
 ---
-## 3.3 Add Date Fields
+### 3.3 Add Date Fields
 
 Add helper columns to enable time-based analysis.
 
@@ -95,7 +95,7 @@ Add helper columns to enable time-based analysis.
     ="Q" & ROUNDUP(MONTH(C2)/3,0)
     ```
 ---
-## 3.4 Basic Data Quality Checks
+### 3.4 Basic Data Quality Checks
 Revenue reconciliation:
     ```excel
     =ROUND([@[Price per Unit]]*[@[Units Sold]], 2) = [@[Total Sales]]
@@ -113,7 +113,7 @@ Missing keys:
 Duplicate check:
 - Conditional Formatting → Duplicate Values.
 ---
-## 3.5 Create Pivot Table for Channel Concentration
+### 3.5 Create Pivot Table for Channel Concentration
   
 
 1. Insert Pivot: Insert → PivotTable → New Worksheet.
