@@ -269,8 +269,101 @@ Top-N quick metrics:
 =SUM(B2:B6)   // Top-5
 =SUM(B2:B11)  // Top-10
 
+---
+### 3.6 Prepare for Scenario Modeling (Revenue-at-Risk)
+
+Channel selector (Data Validation list) → Scenario!D2
+Substitution Rate (% input) → Scenario!D3
+
+Lookup selected channel sales:
+=XLOOKUP(D2, A:A, B:B, 0)
+
+Revenue-at-Risk:
+=[Channel_Sales_Cell] * (1 - $D$3)
+
+Step 4 — Analyze
+4.1 HHI (Herfindahl–Hirschman Index)
+=SUMPRODUCT(B2:Bn * B2:Bn)
 
 
+Interpretation:
+
+< 0.15 → Low concentration
+
+0.15–0.25 → Moderate
+
+> 0.25 → High
+
+4.2 Trend HHI by Quarter
+
+Pivot: Rows = Channel, Cols = Quarter, Values = Total Sales.
+
+Show Values As % of Column Total.
+
+HHI per quarter:
+
+=SUMPRODUCT(E2:E200 * E2:E200)
+
+4.3 Identify Critical Channels
+=IF([@[Share %]]>=0.02,"CRITICAL","OK")
+
+4.4 Pareto Chart Steps
+
+Cumulative %:
+
+=SUM($I$2:I2)
+
+Step 5 — Share
+5.1 KPI Tiles
+=B2           // Top-1
+=SUM(B2:B6)   // Top-5
+=SUM(B2:B11)  // Top-10
+=SUMPRODUCT(B2:Bn*B2:Bn) // HHI
+
+5.2 Charts
+
+Pareto (share + cumulative)
+
+HHI over time
+
+Map Heat (optional)
+
+5.3 Scenario Viewer
+
+Show:
+
+Channel
+
+Sales
+
+Substitution Rate
+
+RaR (bar visual with conditional formatting)
+
+5.4 Executive Summary
+
+What: Concentration level + HHI
+
+So what: Risk & $ impact
+
+Now what: Diversify, protect, test alternatives
+
+Step 6 — Act
+6.1 Recommendations
+
+Reduce Top-10 share ≤ 35%
+
+Add new mid-tier channels
+
+Protect critical channels with joint plans
+
+6.2 Monitoring
+
+Keep raw data in a Table
+
+Refresh pivots on update
+
+Scenario + KPIs update automatically
 
 
 
