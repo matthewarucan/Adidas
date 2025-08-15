@@ -95,8 +95,52 @@ Add helper columns to enable time-based analysis.
     ="Q" & ROUNDUP(MONTH(C2)/3,0)
     ```
 ---
+## 3.4 Basic Data Quality Checks
+Revenue reconciliation:
+    ```excel
+    =ROUND([@[Price per Unit]]*[@[Units Sold]], 2) = [@[Total Sales]]
+    ```
+    - Filter for FALSE to find mismatches.
 
+Invalid checks:
+- Price per Unit <= 0
+- Units Sold < 0
+- Total Sales < 0
 
+Missing keys:
+- Filter blanks in Retailer, Region, State, City.
+
+Duplicate check:
+- Conditional Formatting → Duplicate Values.
+---
+## 3.5 Create Pivot Table for Channel Concentration
+  
+
+1. Insert Pivot: Insert → PivotTable → New Worksheet.
+
+2.  Rows: Channel
+    Values: Sum of Total Sales
+
+3. Show as % of Grand Total.
+
+4. Sort by % descending.
+
+5. Cumulative % (assuming % of total in column B):
+    ```excel
+    =SUM($B$2:B2)
+    ```
+
+6. Highlight channels > 2%:
+- Conditional Formatting → Cell Value > 0.02
+
+Top-N quick metrics:
+ ```excel
+
+=B2           // Top-1
+=SUM(B2:B6)   // Top-5
+=SUM(B2:B11)  // Top-10
+
+```
 
 
 
