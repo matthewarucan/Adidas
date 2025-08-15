@@ -1,378 +1,148 @@
-![](assets/adidas_logo.png)
-# Retail Channel Power Shift
+![Adidas Logo](assets/adidas_logo.png)
 
-## Step 1 — Understand & Define the Business Problem
+# Retail Channel Power Shift — Excel Playbook
+
+> Measure concentration, quantify **Revenue-at-Risk (RaR)**, and recommend actions to reduce dependency on any single **Retailer × Region × State × City** channel.
+
+---
+
+## 1) Understand & Define
 
 ### 1.1 Problem Statement
-Adidas U.S. sales may be overly concentrated in a small number of **retailer–geography** combinations (e.g., `Retailer A – California – Los Angeles`).  
-If one of these channels reduces shelf space, changes contract terms, or stops selling Adidas products, a **significant percentage of revenue is at risk**.
+Adidas U.S. sales may be overly concentrated in a small number of **retailer–geography** combinations (e.g., `Retailer A – California – Los Angeles`). If a top channel reduces shelf space, changes terms, or churns, a **meaningful share of revenue is at risk**.
 
 **Business Question:**  
-> How concentrated is our revenue by channel (Retailer × Region × State × City), and what is the Revenue-at-Risk if a top channel underperforms or is lost?
+How concentrated is revenue by channel, and what is the **Revenue-at-Risk** if a top channel underperforms or is lost (with and without substitution)?
 
----
 ### 1.2 Objectives & Outcomes
-- **Measure concentration**: Top-N shares (Top-1/5/10) & Cumulative Share.
-- **Identify critical channels**: Those with >2% of national revenue.
-- **Quantify Revenue-at-Risk (RaR)**: Model the impact of losing a channel using a **Substitution Rate**.
-- **Recommend actions**: Where to diversify and reduce dependency.
+- **Measure concentration:** Top-N shares (Top-1/5/10) and cumulative share.
+- **Identify critical channels:** Threshold > **2%** of national revenue.
+- **Quantify RaR:** Apply a configurable **Substitution Rate**.
+- **Recommend actions:** Diversify, protect, and grow resilient channels.
 
----
 ### 1.3 Stakeholders
-- VP of Sales / Channel Managers
-- Finance (risk assessment)
-- Trade Marketing (channel growth plans)
+- VP of Sales & Channel Managers  
+- Finance (Risk & Scenario)  
+- Trade Marketing (Growth Planning)
+
+### 1.4 Key Metrics (KPIs)
+- **Max Single-Channel Share %**
+- **Top-N Revenue Share % (Top-1/5/10)**
+- **Revenue-at-Risk ($ and %)**
+- **HHI (Herfindahl–Hirschman Index)**
+- **Target Concentration Level** (e.g., Top-10 ≤ 35%)
 
 ---
-### 1.4 Key Metrics
-- **Top-N Revenue Share %**
-- **Max Single Channel Share**
-- **Revenue-at-Risk** (with substitution)
-- **Target Concentration Level** for diversification
+
+## 2) Scope & Plan (Excel-Only Build)
+
+### 2.1 Deliverables
+- **Data** tab: Cleaned dataset + computed **Channel** field.
+- **Pivots** tab: Channel shares, cumulative %, Top-N.
+- **Scenario** tab: Channel selector, Substitution %, **RaR** calculator.
+- **Summary** tab: KPI tiles, Pareto, HHI-over-time, recommendations.
+
+### 2.2 Workflow
+| Phase   | Task                                              | Tool/Method                    |
+|--------:|---------------------------------------------------|--------------------------------|
+| Setup   | Import & clean headers, create `Channel`          | Excel Table + formulas         |
+| Analysis| Pivot: share %, cumulative %, Top-N               | PivotTables + % of Grand Total |
+| Scenario| RaR calculator (selector + substitution)          | XLOOKUP + Data Validation      |
+| Summary | KPIs + charts + exec summary                      | Charts + conditional formats   |
 
 ---
-## Step 2 — Scope & Plan
 
-### 2.1 Deliverables (Excel only)
-- **Data** tab with cleaned dataset + added `Channel` column.
-- **Pivot Tables** for Top-N channels & Cumulative Share.
-- **Scenario Modeling** tab:
-  - Dropdown to pick a channel.
-  - Substitution % input cell.
-  - Automatic RaR calculation.
-- **Executive Summary** tab with:
-  - KPIs, key visuals, recommendations.
+## 3–6) Excel Build Script
 
----
-### 2.2 Workflow Plan
-| Phase   | Task                                          | Tool/Method                |
-|---------|-----------------------------------------------|----------------------------|
-| Setup   | Import data, clean headers, create `Channel`  | Excel formulas              |
-| Analysis| Create Pivot Table for revenue share & cumulative % | Excel PivotTables      |
-| Scenario| Build Revenue-at-Risk calculator              | Excel formulas & Data Validation |
-| Summary | Build dashboard & recommendations             | Excel charts + summary sheet |
-
----
-## Step 3 — Gather & Prepare Data (Excel Steps)
-
-### 3.1 Load & Inspect
-1. Open `Adidas US Sales Datasets.xlsx`.
-2. Remove any empty rows at the top or bottom.
-3. Check column headers — they should include:
-   - `Retailer`, `Retailer ID`, `Invoice Date`, `Region`, `State`, `City`, `Product`, `Price per Unit`, `Units Sold`, `Total Sales`, `Operating Profit`, `Operating Margin`, `Sales Method`.
-
----
-### 3.2 Create the `Channel` Column
-**Goal:** Unique identifier = `Retailer - Region - State - City`.
-
-Steps:
-1. Insert a new column after `City`.
-2. Name it `Channel`.
-3. If:
-   - `Retailer` = `A2`
-   - `Region` = `D2`
-   - `State` = `E2`
-   - `City` = `F2`
-
-   Use formula:
-   ```excel
-   =A2 & " - " & D2 & " - " & E2 & " - " & F2
-   ```
----
-### 3.3 Add Date Fields
-
-Add helper columns to enable time-based analysis.
-
-1. Insert a **Year** column (assumes `Invoice Date` is in `C2`):
-   ```excel
-   =YEAR(C2)
-   ```
-2. Month (3-letter label):
-    ```excel
-    =TEXT(C2,"MMM")
-    ```
-3. Quarter:
-    ```excel
-    ="Q" & ROUNDUP(MONTH(C2)/3,0)
-    ```
----
-### 3.4 Basic Data Quality Checks
-Revenue reconciliation:
-    ```excel
-    =ROUND([@[Price per Unit]]*[@[Units Sold]], 2) = [@[Total Sales]]
-    ```
-    - Filter for FALSE to find mismatches.
-
-Invalid checks:
-- Price per Unit <= 0
-- Units Sold < 0
-- Total Sales < 0
-
-Missing keys:
-- Filter blanks in Retailer, Region, State, City.
-
-Duplicate check:
-- Conditional Formatting → Duplicate Values.
----
-### 3.5 Create Pivot Table for Channel Concentration
-  
-
-1. Insert Pivot: Insert → PivotTable → New Worksheet.
-
-2.  Rows: Channel
-    Values: Sum of Total Sales
-
-3. Show as % of Grand Total.
-
-4. Sort by % descending.
-
-5. Cumulative % (assuming % of total in column B):
-    ```excel
-    =SUM($B$2:B2)
-    ```
-
-6. Highlight channels > 2%:
-- Conditional Formatting → Cell Value > 0.02
-
-Top-N quick metrics:
- ```excel
-
-=B2           // Top-1
-=SUM(B2:B6)   // Top-5
-=SUM(B2:B11)  // Top-10
-
-```
-
-![](assets/adidas_logo.png)
-# Retail Channel Power Shift
-
-## Step 1 — Understand & Define the Business Problem
-
-### 1.1 Problem Statement
-Adidas U.S. sales may be overly concentrated in a small number of **retailer–geography** combinations (e.g., `Retailer A – California – Los Angeles`).  
-If one of these channels reduces shelf space, changes contract terms, or stops selling Adidas products, a **significant percentage of revenue is at risk**.
-
-**Business Question:**  
-> How concentrated is our revenue by channel (Retailer × Region × State × City), and what is the Revenue-at-Risk if a top channel underperforms or is lost?
-
----
-### 1.2 Objectives & Outcomes
-- **Measure concentration**: Top-N shares (Top-1/5/10) & Cumulative Share.
-- **Identify critical channels**: Those with >2% of national revenue.
-- **Quantify Revenue-at-Risk (RaR)**: Model the impact of losing a channel using a **Substitution Rate**.
-- **Recommend actions**: Where to diversify and reduce dependency.
-
----
-### 1.3 Stakeholders
-- VP of Sales / Channel Managers
-- Finance (risk assessment)
-- Trade Marketing (channel growth plans)
-
----
-### 1.4 Key Metrics
-- **Top-N Revenue Share %**
-- **Max Single Channel Share**
-- **Revenue-at-Risk** (with substitution)
-- **Target Concentration Level** for diversification
-
----
-## Step 2 — Scope & Plan
-
-### 2.1 Deliverables (Excel only)
-- **Data** tab with cleaned dataset + added `Channel` column.
-- **Pivot Tables** for Top-N channels & Cumulative Share.
-- **Scenario Modeling** tab:
-  - Dropdown to pick a channel.
-  - Substitution % input cell.
-  - Automatic RaR calculation.
-- **Executive Summary** tab with:
-  - KPIs, key visuals, recommendations.
-
----
-### 2.2 Workflow Plan
-| Phase   | Task                                          | Tool/Method                |
-|---------|-----------------------------------------------|----------------------------|
-| Setup   | Import data, clean headers, create `Channel`  | Excel formulas              |
-| Analysis| Create Pivot Table for revenue share & cumulative % | Excel PivotTables      |
-| Scenario| Build Revenue-at-Risk calculator              | Excel formulas & Data Validation |
-| Summary | Build dashboard & recommendations             | Excel charts + summary sheet |
-
----
-## Step 3 — Gather & Prepare Data (Excel Steps)
 ```excel
-### 3.1 Load & Inspect
-1. Open `Adidas US Sales Datasets.xlsx`.
+// 3.1 Load & Inspect
+1. Open "Adidas US Sales Datasets.xlsx"
 2. Remove any empty rows at the top or bottom.
-3. Check column headers — they should include:
-   - `Retailer`, `Retailer ID`, `Invoice Date`, `Region`, `State`, `City`, `Product`, `Price per Unit`, `Units Sold`, `Total Sales`, `Operating Profit`, `Operating Margin`, `Sales Method`.
+3. Ensure headers include: Retailer, Retailer ID, Invoice Date, Region, State, City, Product, Price per Unit, Units Sold, Total Sales, Operating Profit, Operating Margin, Sales Method.
 
----
-### 3.2 Create the `Channel` Column
-Goal: Unique identifier = `Retailer - Region - State - City`.
-
-Steps:
-1. Insert a new column after `City`.
-2. Name it `Channel`.
-3. If:
-   - `Retailer` = `A2`
-   - `Region` = `D2`
-   - `State` = `E2`
-   - `City` = `F2`
-
-Formula:
+// 3.2 Create the 'Channel' Column
+Goal: Unique key = Retailer - Region - State - City
 =A2 & " - " & D2 & " - " & E2 & " - " & F2
 
----
-### 3.3 Add Date Fields
-Add helper columns to enable time-based analysis.
+// 3.3 Add Date Fields (C2 = Invoice Date)
+=YEAR(C2)                              // Year
+=TEXT(C2,"MMM")                        // Month label
+="Q" & ROUNDUP(MONTH(C2)/3,0)          // Quarter
 
-1. Year (assumes `Invoice Date` is in `C2`):
-=YEAR(C2)
+// 3.4 Data Quality Checks
+=ROUND([@[Price per Unit]]*[@[Units Sold]],2)=[@[Total Sales]]
+// Filter FALSE for mismatches
+// Invalid filters: Price per Unit <= 0, Units Sold < 0, Total Sales < 0
+// Missing keys: blanks in Retailer, Region, State, City
+// Duplicates: Conditional Formatting → Duplicate Values
 
-2. Month (3-letter label):
-=TEXT(C2,"MMM")
-
-3. Quarter:
-="Q" & ROUNDUP(MONTH(C2)/3,0)
-
----
-### 3.4 Basic Data Quality Checks
-Revenue reconciliation:
-=ROUND([@[Price per Unit]]*[@[Units Sold]], 2) = [@[Total Sales]]
-- Filter for FALSE to find mismatches.
-
-Invalid checks:
-- Price per Unit <= 0
-- Units Sold < 0
-- Total Sales < 0
-
-Missing keys:
-- Filter blanks in Retailer, Region, State, City.
-
-Duplicate check:
-- Conditional Formatting → Duplicate Values.
-
----
-### 3.5 Create Pivot Table for Channel Concentration
-1. Insert Pivot: Insert → PivotTable → New Worksheet.
-2. Rows: Channel  
-   Values: Sum of Total Sales
-3. Show as % of Grand Total.
-4. Sort by % descending.
-5. Cumulative % (assuming % of total in column B):
+// 3.5 Pivot Table for Channel Concentration
+Rows: Channel
+Values: Sum of Total Sales
+Show Values As: % of Grand Total
+Sort: Descending by %
+Cumulative % (B2 = % of total):
 =SUM($B$2:B2)
-6. Highlight channels > 2%:
-- Conditional Formatting → Cell Value > 0.02
+Highlight > 0.02:
+Conditional Formatting → Greater Than 0.02
+Top-N:
+=B2                 // Top-1
+=SUM(B2:B6)         // Top-5
+=SUM(B2:B11)        // Top-10
 
-Top-N quick metrics:
-=B2           // Top-1
-=SUM(B2:B6)   // Top-5
-=SUM(B2:B11)  // Top-10
-
----
-### 3.6 Prepare for Scenario Modeling (Revenue-at-Risk)
-
-Channel selector (Data Validation list) → Scenario!D2
-Substitution Rate (% input) → Scenario!D3
-
-Lookup selected channel sales:
+// 3.6 Scenario Modeling (Revenue-at-Risk)
+Scenario!D2 → Channel selector (Data Validation)
+Scenario!D3 → Substitution Rate
+Channel sales lookup:
 =XLOOKUP(D2, A:A, B:B, 0)
-
 Revenue-at-Risk:
 =[Channel_Sales_Cell] * (1 - $D$3)
 
-Step 4 — Analyze
-4.1 HHI (Herfindahl–Hirschman Index)
+// 4.1 HHI (Herfindahl–Hirschman Index)
 =SUMPRODUCT(B2:Bn * B2:Bn)
-
-
 Interpretation:
-
-< 0.15 → Low concentration
-
+< 0.15 → Low
 0.15–0.25 → Moderate
-
 > 0.25 → High
 
-4.2 Trend HHI by Quarter
-
-Pivot: Rows = Channel, Cols = Quarter, Values = Total Sales.
-
-Show Values As % of Column Total.
-
-HHI per quarter:
-
+// 4.2 Trend HHI by Quarter
+Pivot: Rows = Channel, Cols = Quarter, Values = Total Sales
+Show Values As: % of Column Total
+Per quarter:
 =SUMPRODUCT(E2:E200 * E2:E200)
 
-4.3 Identify Critical Channels
+// 4.3 Critical Channels
 =IF([@[Share %]]>=0.02,"CRITICAL","OK")
 
-4.4 Pareto Chart Steps
-
-Cumulative %:
-
+// 4.4 Pareto Cumulative %
 =SUM($I$2:I2)
 
-Step 5 — Share
-5.1 KPI Tiles
-=B2           // Top-1
-=SUM(B2:B6)   // Top-5
-=SUM(B2:B11)  // Top-10
+// 5.1 KPI Tiles
+=B2                      // Top-1 share
+=SUM(B2:B6)              // Top-5 share
+=SUM(B2:B11)             // Top-10 share
 =SUMPRODUCT(B2:Bn*B2:Bn) // HHI
 
-5.2 Charts
+// 5.2 Charts
+Pareto: share + cumulative %
+HHI over time: line chart
+Map heat: optional if geo present
 
-Pareto (share + cumulative)
+// 5.3 Scenario Viewer
+Show: Channel, Sales, Substitution Rate, RaR
+Use data bars on RaR
 
-HHI over time
-
-Map Heat (optional)
-
-5.3 Scenario Viewer
-
-Show:
-
-Channel
-
-Sales
-
-Substitution Rate
-
-RaR (bar visual with conditional formatting)
-
-5.4 Executive Summary
-
+// 5.4 Executive Summary
 What: Concentration level + HHI
+So What: Risk & $ impact
+Now What: Diversify, protect, test alternatives
 
-So what: Risk & $ impact
+// 6.1 Recommendations
+Reduce Top-10 ≤ 35%
+Add mid-tier channels
+Protect criticals
 
-Now what: Diversify, protect, test alternatives
-
-Step 6 — Act
-6.1 Recommendations
-
-Reduce Top-10 share ≤ 35%
-
-Add new mid-tier channels
-
-Protect critical channels with joint plans
-
-6.2 Monitoring
-
-Keep raw data in a Table
-
+// 6.2 Monitoring
+Keep data in Table format
 Refresh pivots on update
-
-Scenario + KPIs update automatically
-
-
-
-
-
-
-
-
-
-
-
-   
+Scenario + KPIs auto-update
