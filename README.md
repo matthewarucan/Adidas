@@ -77,6 +77,7 @@ Steps:
    Use formula:
    ```excel
    =A2 & " - " & D2 & " - " & E2 & " - " & F2
+   ```
 ---
 ### 3.3 Add Date Fields
 
