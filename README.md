@@ -125,6 +125,8 @@ Interpretation (cell with HHI in C201):
 =IF([@[Share %]]>=0.02,"CRITICAL","OK")
 ```
 
+## Section 5 TITLE
+
 ### 5.1 Scenario Modeling (Revenue-at-Risk)
 Scenario!D2 → Channel selector (Data Validation from Channel_List)  
 Scenario!D3 → Substitution Rate (e.g., 0.50 for 50%)
@@ -138,24 +140,30 @@ Revenue-at-Risk:
 ```excel
 =$D$5*(1-$D$3)
 ```
+## Section 6 TITLE
 
 ### 6.1 KPI Tiles
 Top-1 Share:
 ```excel
 =MAX(Channel_Summary!E:E)
 ```
-
 Top-5 Share:
+```excel
 =SUM(Channel_Summary!E2:E6)
+```
 
 Top-10 Share:
+```excel
 =SUM(Channel_Summary!E2:E11)
+```
 
 HHI Latest:
 [link to latest quarter HHI cell]
 
 ### 6.2 Pareto Cumulative %
+```excel
 =SUM($E$2:E2)
+```
 
 ### 6.3 Charts
 - Pareto: Column (share) + Line (cumulative %)
