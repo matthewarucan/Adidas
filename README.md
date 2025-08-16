@@ -1,6 +1,6 @@
-# Retail Channel Power Shift
-
 ![Adidas Logo](assets/adidas_logo.png)
+
+# Retail Channel Power Shift
 
 > **Goal:** Measure channel concentration, quantify **Revenue-at-Risk (RaR)**, and recommend actions to reduce dependency on any single **Retailer × Region × State × City** combination.
 
