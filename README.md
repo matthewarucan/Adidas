@@ -47,8 +47,6 @@ How concentrated is revenue by channel, and what is the **Revenue-at-Risk** if a
 | Scenario| RaR calculator (selector + substitution)          | XLOOKUP + Data Validation      |
 | Summary | KPIs + charts + exec summary                      | Charts + conditional formats   |
 
----
-
 ## 3️⃣ Data Preparation
 
 ### 3.1 Load & Inspect
@@ -79,8 +77,6 @@ Revenue Reconciles = ROUND([Price per Unit]*[Units Sold],2) = [Total Sales]
 During reconciliation, ~50% of rows showed a 10× mismatch between Price × Units and Total Sales. This was traced to an error in the Units Sold column (values recorded at 1/10th of the true volume).
 
 ✅ Fix: Adjusted by scaling Units Sold by 10 where mismatches occurred. This correction ensures consistency in revenue calculations, prevents underestimation of sales volume, and keeps channel concentration and Revenue-at-Risk analysis accurate.
-
----
 
 ## 4️⃣ Excel Build Script
 
