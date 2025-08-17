@@ -78,6 +78,14 @@ During reconciliation, ~50% of rows showed a 10× mismatch between Price × Unit
 
 ✅ Fix: Adjusted by scaling Units Sold by 10 where mismatches occurred. This correction ensures consistency in revenue calculations, prevents underestimation of sales volume, and keeps channel concentration and Revenue-at-Risk analysis accurate.
 
+
+
+
+
+
+
+
+
 ## 4️⃣ Excel Build Script
 
 ### 4.1 Channel Concentration
@@ -89,14 +97,14 @@ Pivot:
 
 Cumulative %:
 ```excel
-=SUM($B$2:B2)
+=SUM($[% Total Sales]$2:[% Total Sales]2)
 ```
 
 Top-N:
 ```excel
-=B2                     // Top-1
-=SUM(B2:B6)             // Top-5
-=SUM(B2:B11)            // Top-10
+Top-1 = [% Total Sales]2
+Top-5 = SUM([% Total Sales]2:[% Total Sales]6)
+Top-10 = SUM([% Total Sales]2:[% Total Sales]11)
 ```
 
 ### 4.2 HHI (Herfindahl–Hirschman Index) by Quarter
@@ -120,6 +128,27 @@ Interpretation (cell with HHI in C201):
 ```excel
 =IF([@[Share %]]>=0.02,"CRITICAL","OK")
 ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Section 5 TITLE
 
