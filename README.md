@@ -59,15 +59,16 @@ How concentrated is revenue by channel, and what is the **Revenue-at-Risk** if a
 
 ### 3.2 Create the 'Channel' Column
 ```excel
-=CONCAT([Retailer], "-", [Region], "-", [State], "-", [City])
+Channel = CONCAT([Retailer], "-", [Region], "-", [State], "-", [City])
 ```
 
 ### 3.3 Add Date Fields
 ```excel
-Year =YEAR([Invoice Date])
-Month =MONTH([Invoice Date])
-Quarter ="Q" & ROUNDUP(MONTH([Invoice Date])/3,0)
+Year = YEAR([Invoice Date])
+Month = MONTH([Invoice Date])
+Quarter = "Q" & ROUNDUP(MONTH([Invoice Date])/3,0)
 ```
+
 ### 3.4 Data Quality Checks
 ```excel
 =ROUND([@[Price per Unit]]*[@[Units Sold]],2) = [@[Total Sales]]
