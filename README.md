@@ -33,10 +33,10 @@ How concentrated is revenue by channel, and what is the **Revenue-at-Risk** if a
 ## 2️⃣ Scope & Plan (Excel-Only Build)
 
 ### 2.1 Deliverables
-- **Data** tab: Cleaned dataset + computed **Channel** field.
-- **Channel_Summary** tab: Channel shares, cumulative %, Top-N.
-- **Scenario** tab: Channel selector, Substitution %, **RaR** calculator.
-- **KPI** tab: KPI tiles, Pareto, HHI-over-time, recommendations.
+- **Data Tab**: Cleaned dataset + computed channel field.
+- **Channel_Summary Tab**: Channel shares, cumulative %, Top-N.
+- **Scenario Tab**: Channel selector, Substitution %, RaR calculator.
+- **KPI Tab**: KPI tiles, Pareto, HHI-over-time, recommendations.
 
 ### 2.2 Workflow
 
