@@ -71,10 +71,14 @@ Quarter = "Q" & ROUNDUP(MONTH([Invoice Date])/3,0)
 
 ### 3.4 Data Quality Checks
 ```excel
-=ROUND([@[Price per Unit]]*[@[Units Sold]],2) = [@[Total Sales]]
+Revenue Reconciles = ROUND([Price per Unit]*[Units Sold],2) = [Total Sales]
 ```
 - Filter FALSE → investigate mismatches.
 - Check: Price per Unit > 0, Units Sold >= 0, Total Sales >= 0.
+
+During reconciliation, ~50% of rows showed a 10× mismatch between Price × Units and Total Sales. This was traced to an error in the Units Sold column (values recorded at 1/10th of the true volume).
+
+✅ Fix: Adjusted by scaling Units Sold by 10 where mismatches occurred. This correction ensures consistency in revenue calculations, prevents underestimation of sales volume, and keeps channel concentration and Revenue-at-Risk analysis accurate.
 
 ---
 
