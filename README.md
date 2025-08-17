@@ -4,8 +4,6 @@
 
 > **Goal:** Measure channel concentration, quantify **Revenue-at-Risk (RaR)**, and recommend actions to reduce dependency on any single **Retailer × Region × State × City** combination.
 
----
-
 ## 1️⃣ Understand & Define
 
 ### 1.1 Problem Statement
@@ -31,8 +29,6 @@ How concentrated is revenue by channel, and what is the **Revenue-at-Risk** if a
 - **Revenue-at-Risk ($ and %)**
 - **HHI (Herfindahl–Hirschman Index)**
 - **Target Concentration Level** (e.g., Top-10 ≤ 35%)
-
----
 
 ## 2️⃣ Scope & Plan (Excel-Only Build)
 
