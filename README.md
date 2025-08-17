@@ -9,8 +9,7 @@
 ## 1️⃣ Understand & Define
 
 ### 1.1 Problem Statement
-Adidas U.S. sales may be overly concentrated in a small number of **retailer–geography** combinations (e.g., `Retailer A – California – Los Angeles`).  
-If a top channel reduces shelf space, changes contract terms, or churns, a **meaningful share of revenue is at risk**.
+Adidas U.S. sales may be overly concentrated in a small number of **retailer–geography** combinations (e.g., `Retailer A – California – Los Angeles`). If a top channel reduces shelf space, changes contract terms, or churns, a **meaningful share of revenue is at risk**.
 
 **Business Question:**  
 How concentrated is revenue by channel, and what is the **Revenue-at-Risk** if a top channel underperforms or is lost (with and without substitution)?
