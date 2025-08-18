@@ -181,6 +181,25 @@ Create a new sheet named **Scenario** and set up these cells:
 
 ## 6️⃣ KPI Tiles & Charts
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 6.1 KPI Tiles
 Top-1 Share:
 ```excel
