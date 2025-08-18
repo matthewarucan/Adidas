@@ -134,7 +134,6 @@ Create a new sheet named **Scenario** and set up these cells:
 
 | Cell | Label                  | Notes                                                                 |
 |------|------------------------|----------------------------------------------------------------------|
-| B2   | Scenario Controls      | Section header (format bold/large)                                   |
 | D2   | Channel                | Data Validation (dropdown from Channel list)                         |
 | D3   | Substitution Rate      | Enter as a decimal (e.g., 0.50 = 50%); format as %                   |
 | D4   | Total Company Sales    | Sum of channel totals (pulled from `Channel_Summary`)                 |
@@ -144,19 +143,40 @@ Create a new sheet named **Scenario** and set up these cells:
 | D8   | RaR as % of Total      | Risk relative to company sales                                        |
 
 
-**Assumptions**  
-- `Channel_Summary!A:A` = Channel names  
-- `Channel_Summary!C:C` = Total Sales by channel  
-*(Adjust column letters if yours differ.)*
+### 5.3 Build Steps (Your Version)
 
+1. **Dropdown Setup**  
+   - In cell D2, created a Data Validation dropdown referencing the list of channels from `Channel_Summary!A:A`.  
+   - This allows the user to select a specific channel.
 
+2. **Substitution Rate Input**  
+   - In cell D3, entered a substitution rate (e.g., `0.30` for 30%).  
+   - Formatted the cell as a percentage.
 
+3. **Channel Sales Lookup**  
+   - In cell D4, used a lookup formula to pull the total sales of the selected channel from `Channel_Summary`.  
+   - This ensures the scenario reflects the actual revenue of that channel.
 
+4. **Revenue-at-Risk Calculation**  
+   - In cell D5, calculated the expected revenue loss after applying the substitution rate:  
+     ```excel
+     = C5* (1 - $C$3)
+     ```  
+   - This gives the dollar amount of sales at risk if the selected channel underperforms.
+  
+5. **Revenue Retained**  
+```excel
+= D4-D5
+```
 
-
-
-
-
+6. RaR as % of Total
+```excel
+=C6/C4
+```
+5.4 What users can do with it
+- Stress-test dependency: Pick any channel and see immediate $ RaR and RaR % of total.
+- Model mitigation: Adjust the Substitution Rate (0–100%) to estimate recovery to other channels.
+- Prioritize risk: Compare RaR across multiple channels to identify which losses would matter most.
 
 
 ## Section 6 TITLE
