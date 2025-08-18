@@ -78,14 +78,6 @@ During reconciliation, ~50% of rows showed a 10× mismatch between Price × Unit
 
 ✅ Fix: Adjusted by scaling Units Sold by 10 where mismatches occurred. This correction ensures consistency in revenue calculations, prevents underestimation of sales volume, and keeps channel concentration and Revenue-at-Risk analysis accurate.
 
-
-
-
-
-
-
-
-
 ## 4️⃣ Excel Build Script
 
 ### 4.1 Channel Concentration
@@ -128,28 +120,8 @@ Interpretation (cell with HHI in C201):
 This step classifies each channel based on its revenue share. Any channel contributing ≥2% of total national revenue is flagged as CRITICAL, while smaller channels are marked as OK. The 2% threshold helps identify channels that are large enough that losing them would materially impact Adidas’s revenue. Including this check highlights concentration risk, ensuring decision-makers know which specific retailer-region combinations require monitoring, protection, or diversification strategies.
 
 ```excel
-=IF([@[Share %]]>=0.02,"CRITICAL","OK")
+=IF([% Total Sales]>=0.02, "CRITICAL", "OK")
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Section 5 TITLE
 
