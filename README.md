@@ -116,19 +116,20 @@ Pivot:
 
 HHI (e.g., C2:C200 are shares for Q1 2020):
 ```excel
-=SUMPRODUCT(C$2:C$200*C$2:C$200)
+= SUMPRODUCT(C$2:C$200*C$2:C$200)
 ```
 
 Interpretation (cell with HHI in C201):
 ```excel
-=IF(C201<0.15,"Low",IF(C201<=0.25,"Moderate","High"))
+= IF(C201<0.15,"Low",IF(C201<=0.25,"Moderate","High"))
 ```
 
 ### 4.3 Critical Channels
+This step classifies each channel based on its revenue share. Any channel contributing ≥2% of total national revenue is flagged as CRITICAL, while smaller channels are marked as OK. The 2% threshold helps identify channels that are large enough that losing them would materially impact Adidas’s revenue. Including this check highlights concentration risk, ensuring decision-makers know which specific retailer-region combinations require monitoring, protection, or diversification strategies.
+
 ```excel
 =IF([@[Share %]]>=0.02,"CRITICAL","OK")
 ```
-
 
 
 
