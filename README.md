@@ -179,7 +179,7 @@ Create a new sheet named **Scenario** and set up these cells:
 - Prioritize risk: Compare RaR across multiple channels to identify which losses would matter most.
 
 
-## Section 6 TITLE
+## 6️⃣ KPI Tiles & Charts
 
 ### 6.1 KPI Tiles
 Top-1 Share:
