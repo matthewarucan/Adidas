@@ -123,6 +123,9 @@ This step classifies each channel based on its revenue share. Any channel contri
 =IF([% Total Sales]>=0.02, "CRITICAL", "OK")
 ```
 
+
+
+
 ## Section 5 TITLE
 
 ### 5.1 Scenario Modeling (Revenue-at-Risk)
@@ -138,6 +141,12 @@ Revenue-at-Risk:
 ```excel
 =$D$5*(1-$D$3)
 ```
+
+
+
+
+
+
 ## Section 6 TITLE
 
 ### 6.1 KPI Tiles
