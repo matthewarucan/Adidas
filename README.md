@@ -181,52 +181,70 @@ Create a new sheet named **Scenario** and set up these cells:
 
 ## 6️⃣ KPI Tiles & Charts
 
+### 6.1 KPI Results
+- **Top-1 Share:** 3.71%  
+- **Top-5 Share:** 14.80%  
+- **Top-10 Share:** 26.46%  
+- **HHI (Overall):** 161.54 *(Low concentration — <1500 is considered unconcentrated in antitrust benchmarks)*  
 
+**Interpretation:**  
+- The **largest single channel** only contributes **3.71%** of total revenue, which is very low compared to typical “at-risk” benchmarks (often >20%).  
+- The **Top-5 channels** together make up **14.8%** of sales, and the **Top-10 channels** contribute **26.5%**. This confirms that Adidas revenue is **widely distributed** rather than concentrated.  
+- The **overall HHI = 161.54**, which falls far below the **1500 threshold for “moderate concentration.”** In antitrust terms, Adidas sales are essentially **unconcentrated** — meaning no single retailer has enough dominance to pose a systemic risk.  
 
+**Takeaway:**  
+Adidas has a **diversified channel base**. Even if one retailer underperforms, the impact on overall revenue is minimal. This reduces dependency risk and strengthens resilience across the retail network.  
 
+### 6.2 HHI by Quarter
+| Year | Quarter | HHI   | Concentration Level |
+|------|---------|-------|---------------------|
+| 2020 | Q1      | 0.445 | High                |
+| 2020 | Q2      | 0.255 | High                |
+| 2020 | Q3      | 0.192 | Moderate            |
+| 2020 | Q4      | 0.223 | Moderate            |
+| 2021 | Q1      | 0.051 | Low                 |
+| 2021 | Q2      | 0.040 | Low                 |
+| 2021 | Q3      | 0.030 | Low                 |
+| 2021 | Q4      | 0.021 | Low                 |
 
+**Interpretation:**  
+- In **2020**, Adidas sales were concentrated in fewer channels (Q1–Q2 showed **High concentration**, meaning a handful of retailers dominated revenue).  
+- By **late 2020 (Q3–Q4)**, concentration dropped to **Moderate**, showing diversification across channels.  
+- In **2021**, concentration consistently fell to **Low** (HHI < 0.15), meaning sales became more evenly spread across retailers, reducing dependency on any single partner.  
 
+**Takeaway:** Adidas reduced risk exposure by diversifying revenue across channels from 2020 → 2021. This shift indicates stronger channel balance and less vulnerability if a single retailer underperforms.  
 
+### 6.3 Pareto Cumulative %
 
-
-
-
-
-
-
-
-
-
-
-
-
-### 6.1 KPI Tiles
-Top-1 Share:
+Column D in the `Channel_Summary` sheet shows the **Pareto Cumulative %**, calculated as:
 ```excel
-=MAX(Channel_Summary!E:E)
+=SUM($C$2:C2)
 ```
-Top-5 Share:
-```excel
-=SUM(Channel_Summary!E2:E6)
-```
+(where Column C = % of Total Sales)
 
-Top-10 Share:
-```excel
-=SUM(Channel_Summary!E2:E11)
-```
+**Interpretation (from your dataset):**
 
-HHI Latest:
-[link to latest quarter HHI cell]
+- Top-1 channel = 3.71% of sales.  
+- Top-5 channels together = 14.80%.  
+- Top-10 channels together = 26.46%.  
+- By the time ~25 channels are included, ~50% of sales are covered.  
 
-### 6.2 Pareto Cumulative %
-```excel
-=SUM($E$2:E2)
-```
+**Meaning:**  
+This highlights the **Pareto Principle (80/20 rule)** — a small set of top channels drive a disproportionate share of sales, while the remaining long tail of channels contributes incrementally less.
 
 ### 6.3 Charts
 - Pareto: Column (share) + Line (cumulative %)
 - HHI Trend: Line chart over quarters
 - RaR Scenario: Data bars on RaR
+
+
+
+
+
+
+
+
+
 
 ### 7. Executive Summary
 What:  
