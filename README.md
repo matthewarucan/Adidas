@@ -128,21 +128,31 @@ This step classifies each channel based on its revenue share. Any channel contri
 ### 5.1 Purpose
 An interactive what-if tool that estimates Revenue-at-Risk (RaR) if a selected Channel underperforms or churns, with an adjustable Substitution Rate to see how much revenue is recovered by other channels.
 
+## 5.2 Sheet Layout (Recommended)
+
+Create a new sheet named **Scenario** and set up these cells:
+
+| Cell | Label                  | Notes                                                                 |
+|------|------------------------|----------------------------------------------------------------------|
+| B2   | Scenario Controls      | Section header (format bold/large)                                   |
+| D2   | Channel                | Data Validation (dropdown from Channel list)                         |
+| D3   | Substitution Rate      | Enter as a decimal (e.g., 0.50 = 50%); format as %                   |
+| D4   | Total Company Sales    | Sum of channel totals (pulled from `Channel_Summary`)                 |
+| D5   | Selected Channel Sales | Lookup from `Channel_Summary` by Channel                             |
+| D6   | Revenue-at-Risk ($)    | Loss after substitution                                               |
+| D7   | Revenue Retained ($)   | Sales that remain after loss                                          |
+| D8   | RaR as % of Total      | Risk relative to company sales                                        |
+
+
+**Assumptions**  
+- `Channel_Summary!A:A` = Channel names  
+- `Channel_Summary!C:C` = Total Sales by channel  
+*(Adjust column letters if yours differ.)*
 
 
 
-Scenario!D2 → Channel selector (Data Validation from Channel_List)  
-Scenario!D3 → Substitution Rate (e.g., 0.50 for 50%)
 
-Channel Sales Lookup:
-```excel
-=XLOOKUP($D$2, Channel_Summary!$A:$A, Channel_Summary!$C:$C, 0)
-```
 
-Revenue-at-Risk:
-```excel
-=$D$5*(1-$D$3)
-```
 
 
 
