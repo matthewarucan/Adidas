@@ -123,12 +123,14 @@ This step classifies each channel based on its revenue share. Any channel contri
 =IF([% Total Sales]>=0.02, "CRITICAL", "OK")
 ```
 
+## 5️⃣ Scenario Modeling (Revenue-at-Risk)
+
+### 5.1 Purpose
+An interactive what-if tool that estimates Revenue-at-Risk (RaR) if a selected Channel underperforms or churns, with an adjustable Substitution Rate to see how much revenue is recovered by other channels.
 
 
 
-## Section 5 TITLE
 
-### 5.1 Scenario Modeling (Revenue-at-Risk)
 Scenario!D2 → Channel selector (Data Validation from Channel_List)  
 Scenario!D3 → Substitution Rate (e.g., 0.50 for 50%)
 
