@@ -1,4 +1,4 @@
-![Adidas Logo](assets/adidas_logo.png)
+ri![Adidas Logo](assets/adidas_logo.png)
 
 # Retail Channel Concentration & Revenue-at-Risk Analysis
 
@@ -257,6 +257,8 @@ Interpreting this trend:
 This view allows executives to track whether Adidas’ revenue diversification strategy is working over time.
 
 ### 3. Revenue-at-Risk (RaR) Scenario Tool
+![](assets/Scenario.png)
+
 The scenario analysis table allows users to select a specific channel and apply a **substitution rate** (i.e., percentage of sales Adidas expects to recover if that channel fails).  
 
 Example: If *West Gear – San Francisco* were lost, with a 30% substitution rate:
@@ -265,17 +267,6 @@ Example: If *West Gear – San Francisco* were lost, with a 30% substitution rat
 - **Net impact = 1.3% of total company sales**  
 
 This dynamic tool quantifies potential financial exposure channel by channel and helps prioritize which partnerships are “too big to fail.”
-
-
-
-
-
-
-
-
-
-
-
 
 ### Summary
 Together, these three visuals tell a complete story:
