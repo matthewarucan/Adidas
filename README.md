@@ -232,11 +232,52 @@ Column D in the `Channel_Summary` sheet shows the **Pareto Cumulative %**, calcu
 **Meaning:**  
 This highlights the **Pareto Principle (80/20 rule)** — a small set of top channels drive a disproportionate share of sales, while the remaining long tail of channels contributes incrementally less.
 
-### 6.3 Charts
-- Pareto: Column (share) + Line (cumulative %)
-- HHI Trend: Line chart over quarters
-- RaR Scenario: Data bars on RaR
+### 6.3 Visualization of Channel Concentration & Revenue Risk
 
+To better understand Adidas’ revenue concentration and potential vulnerabilities, we created three complementary visuals:
+
+### 1. % of Total Sales by Channel
+The bar chart highlights each channel’s contribution to total sales. The **Top 5 channels alone account for nearly 50% of Adidas’ U.S. revenue**, underscoring how dependent the company is on just a few partners.  
+To emphasize this risk, these top contributors are visually separated (**orange**) from the long tail of other channels (**grey**). This makes it clear that the business is heavily exposed if any of these top channels underperform.
+
+### 2. HHI Trend by Quarter
+The **Herfindahl-Hirschman Index (HHI)** was calculated quarterly to measure sales concentration.  
+The trend chart (or table with conditional formatting) shows that in 2020, concentration was **“High” to “Moderate”**, with Q1 at **0.445 (High)**. By 2021, however, the index dropped to **Low** levels (as low as **0.021**), reflecting a healthier distribution of sales across channels.  
+
+Interpreting this trend:
+- **Rising HHI → riskier, more concentrated sales.**  
+- **Falling HHI → sales spread across more partners, reducing dependency risk.**  
+
+This view allows executives to track whether Adidas’ revenue diversification strategy is working over time.
+
+### 3. Revenue-at-Risk (RaR) Scenario Tool
+The scenario analysis table allows users to select a specific channel and apply a **substitution rate** (i.e., percentage of sales Adidas expects to recover if that channel fails).  
+
+Example: If *West Gear – San Francisco* were lost, with a 30% substitution rate:
+- **Revenue-at-Risk = $23.35M**  
+- **Revenue Retained = $10.0M**  
+- **Net impact = 1.3% of total company sales**  
+
+This dynamic tool quantifies potential financial exposure channel by channel and helps prioritize which partnerships are “too big to fail.”
+
+
+
+
+
+
+
+
+
+
+
+
+### Summary
+Together, these three visuals tell a complete story:
+- The **% of Sales chart** shows the current concentration problem.  
+- The **HHI trend** shows how that problem is evolving over time.  
+- The **RaR scenario tool** shows the financial impact if a major channel is disrupted.  
+
+This combination of static concentration analysis and dynamic risk modeling provides a strong foundation for recommending diversification strategies and ongoing monitoring.
 
 
 
