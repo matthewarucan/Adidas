@@ -239,11 +239,15 @@ To better understand Adidas’ revenue concentration and potential vulnerabiliti
 ### 1. % of Total Sales by Channel
 ![](assets/Sales_Channel.png)
 The bar chart highlights each channel’s contribution to total sales. The **Top 5 channels alone account for nearly 50% of Adidas’ U.S. revenue**, underscoring how dependent the company is on just a few partners.  
+
 To emphasize this risk, these top contributors are visually separated (**orange**) from the long tail of other channels (**grey**). This makes it clear that the business is heavily exposed if any of these top channels underperform.
+
 
 ### 2. HHI Trend by Quarter
 ![](assets/HHI_Quarter.png)
+
 The **Herfindahl-Hirschman Index (HHI)** was calculated quarterly to measure sales concentration.  
+
 The trend chart (or table with conditional formatting) shows that in 2020, concentration was **“High” to “Moderate”**, with Q1 at **0.445 (High)**. By 2021, however, the index dropped to **Low** levels (as low as **0.021**), reflecting a healthier distribution of sales across channels.  
 
 Interpreting this trend:
