@@ -276,40 +276,29 @@ Together, these three visuals tell a complete story:
 
 This combination of static concentration analysis and dynamic risk modeling provides a strong foundation for recommending diversification strategies and ongoing monitoring.
 
+## 7. Executive Summary
 
+**What:**  
+- **2020 Q1:** HHI = 0.445 (High), **Top-10 Share ~70%** → highly concentrated, risky.  
+- **2021:** HHI fell below 0.05 (Low), **Top-10 Share ~26%**, showing stronger diversification.  
 
+**So What:**  
+- Over-reliance on a small number of channels creates material risk exposure.  
+- Scenario modeling shows that losing a top channel could erase **>$20M in sales per quarter**, with only partial recovery under substitution scenarios.  
 
+**Now What (Recommendations):**  
+- **Reduce Top-10 Share to ≤35% within 12 months** through targeted mid-tier channel growth.  
+- **Expand mid-tier partnerships** to reduce dependency on a few dominant accounts.  
+- **Protect CRITICAL channels (>2% of sales)** with stronger contracts, co-marketing, or exclusivity agreements.  
+- **Embed monitoring:** Track HHI quarterly to detect “concentration creep” early.  
+- **Leverage RaR tool in planning:** Stress-test concentration risks when negotiating or renewing partner contracts.
 
+## 8. Monitoring & Next Steps
 
-
-
-
-### 7. Executive Summary
-What:  
-2020 Q1 HHI = 0.445 (High), Top-10 Share ~70% → significant dependency risk.
-
-So What:  
-Losing a top channel could remove >$X M in quarterly sales.  
-Substitution rate scenarios show only partial recovery.
-
-Now What:  
-- Reduce Top-10 share to ≤35% within 12 months.  
-- Add mid-tier channels to diversify revenue base.  
-- Increase protection measures for CRITICAL channels (>2% share).
-
-### 8. Monitoring
-- Keep Data tab in Table format  
-- Refresh pivots when updating data  
-- Scenario + KPI tiles auto-update  
-- Track HHI trend quarterly to spot concentration creep
-
-
-
-
-
-
-
-
+- Maintain data in **structured table format**.  
+- Refresh pivots & Tableau dashboards quarterly.  
+- **KPI tiles auto-update** as new data flows in.  
+- Keep using HHI + RaR as **leading risk indicators** to guide diversification strategy.  
 
 
 
